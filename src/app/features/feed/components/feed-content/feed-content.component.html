@@ -1,0 +1,11 @@
+<app-create-post (postCreated)="getAllPostsData()"></app-create-post>
+
+@for (post of postList; track $index) {
+  <app-post-card 
+    [post]="post" 
+    [userId]="userId"
+    (postDeleted)="onPostDeleted($event)"
+      (postShared)="onPostShared($event)"
+>
+  </app-post-card>
+}

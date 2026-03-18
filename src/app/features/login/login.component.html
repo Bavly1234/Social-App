@@ -1,0 +1,65 @@
+<h2 class="text-2xl font-bold">{{ 'login.title' | translate }}</h2>
+<p class="text-gray-500 mb-3">{{ 'login.subtitle' | translate }}</p>
+
+
+
+<form class="grid gap-y-4" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+
+  <div class="relative">
+    <input type="email" formControlName="login" id="email"
+      class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-heading bg-transparent rounded-base border-1 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      placeholder=" " />
+    <label for="email"
+      class="absolute text-sm text-body duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-neutral-primary px-2 peer-focus:px-2 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+       {{ 'login.emailOrUsername' | translate }}</label>
+    @if(loginForm.get('login')?.invalid && loginForm.get('login')?.touched) {
+    <span class="text-xs text-red-500 mt-1 ms-3">
+      @if (loginForm.get('login')?.hasError('required')) {
+       {{ 'login.emailRequired' | translate }}
+      }
+      @else if (loginForm.get('login')?.hasError('minlength')) {
+        {{ 'login.emailMinLength' | translate }}
+      }
+    </span>
+    }
+  </div>
+
+
+  <div class="relative">
+    <input type="password" #pass formControlName="password" id="password"
+      class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-heading bg-transparent rounded-base border-1 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      placeholder=" " />
+
+    <label for="password" class="absolute text-sm text-body duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-neutral-primary px-2 peer-focus:text-fg-brand
+    peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2
+    peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
+      Password
+    </label>
+
+
+  </div>
+  @if(loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+  <span class="text-xs text-red-500  ms-3 block">
+    @if (loginForm.get('password')?.hasError('required')) {
+  {{ 'login.passwordRequired' | translate }}
+    }
+    @else if (loginForm.get('password')?.hasError('pattern')) {
+    {{ 'login.passwordPattern' | translate }}
+    }
+  </span>
+  }
+
+
+
+  <button type="submit" [disabled]="loading"
+    class="bg-mainColor cursor-pointer text-white py-3 px-4 rounded-base hover:bg-brand-dark disabled:bg-gray-500 disabled:cursor-not-allowed">
+
+      {{ 'login.loginButton' | translate }}
+
+    @if(loading) {
+    <i class="fas fa-spinner fa-spin"></i>
+    }
+  </button>
+  <p class="text-red-500 text-lg text-center ">{{ msgError }}</p>
+</form>

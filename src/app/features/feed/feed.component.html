@@ -1,0 +1,57 @@
+<section>
+  <div class="container p-4 flex flex-col lg:grid lg:grid-cols-[220px_minmax(0,1fr)_320px] gap-4">
+
+    <div class="lg:hidden grid grid-cols-2 gap-2">
+      <button routerLink="/feed" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="bg-blue-50 text-blue-600"
+        class="flex items-center justify-center gap-2 p-3 bg-white border border-slate-100 rounded-xl font-semibold text-slate-700 hover:bg-slate-50 shadow-sm transition-colors">
+        <i class="fa-regular fa-newspaper"></i>
+        <span class="text-sm">Feed</span>
+      </button>
+      <button routerLink="/feed/my-posts" routerLinkActive="bg-blue-50 text-blue-600"
+        class="flex items-center justify-center gap-2 p-3 bg-white border border-slate-100 rounded-xl font-semibold text-slate-700 hover:bg-slate-50 shadow-sm transition-colors">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <span class="text-sm">My Posts</span>
+      </button>
+      <button routerLink="/feed/community" routerLinkActive="bg-blue-50 text-blue-600"
+        class="flex items-center justify-center gap-2 p-3 bg-white border border-slate-100 rounded-xl font-semibold text-slate-700 hover:bg-slate-50 shadow-sm transition-colors">
+        <i class="fa-solid fa-globe"></i>
+        <span class="text-sm">Community</span>
+      </button>
+      <button routerLink="/feed/saved" routerLinkActive="bg-blue-50 text-blue-600"
+        class="flex items-center justify-center gap-2 p-3 bg-white border border-slate-100 rounded-xl font-semibold text-slate-700 hover:bg-slate-50 shadow-sm transition-colors">
+        <i class="fa-regular fa-bookmark"></i>
+        <span class="text-sm">Saved</span>
+      </button>
+    </div>
+
+    <div class="lg:hidden">
+      <button type="button" (click)="showFriends = !showFriends"
+        class="w-full flex items-center justify-between px-4 py-3 bg-white border border-slate-200 rounded-xl shadow-sm font-semibold text-slate-700 hover:bg-slate-50 transition">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-user-group text-blue-500"></i>
+          <span class="text-sm">Suggested Friends</span>
+        </div>
+        <i class="fa-solid text-slate-400 text-sm transition-transform duration-200"
+          [ngClass]="showFriends ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </button>
+      @if (showFriends) {
+        <div class="mt-2">
+          <app-side-right></app-side-right>
+        </div>
+      }
+    </div>
+
+    <div class="hidden lg:block">
+      <app-side-left></app-side-left>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="hidden lg:block">
+      <app-side-right></app-side-right>
+    </div>
+
+  </div>
+</section>

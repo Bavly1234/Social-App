@@ -1,0 +1,146 @@
+<h2 class="text-2xl font-bold">{{ 'register.title' | translate }}</h2>
+<p class="text-gray-500 mb-3">{{ 'register.subtitle' | translate }}</p>
+
+
+
+<form class="grid gap-y-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <div class="relative">
+    <input type="text" formControlName="name" id="name"
+      class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-heading bg-transparent rounded-base border-1 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      placeholder=" " />
+    <label for="name"
+      class="absolute text-sm text-body duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-neutral-primary px-2 peer-focus:px-2 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+      {{ 'register.name' | translate }}</label>
+    @if(registerForm.get('name')?.invalid && registerForm.get('name')?.touched) {
+    <span class="text-xs text-red-500 mt-1 ms-3">
+      @if (registerForm.get('name')?.hasError('required')) {
+      {{ 'register.nameRequired' | translate }}
+      }
+      @else if (registerForm.get('name')?.hasError('minlength')) {
+      {{ 'register.nameMinLength' | translate }}
+      }
+    </span>
+    }
+  </div>
+
+  <div class="relative">
+    <input type="text" formControlName="username" id="username"
+      class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-heading bg-transparent rounded-base border-1 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      placeholder=" " />
+    <label for="username"
+      class="absolute text-sm text-body duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-neutral-primary px-2 peer-focus:px-2 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+      {{ 'register.username' | translate }}</label>
+    @if(registerForm.get('username')?.invalid && registerForm.get('username')?.touched) {
+    <span class="text-xs text-red-500 mt-1 ms-3">
+      {{ 'register.usernameMinLength' | translate }}
+    </span>
+    }
+  </div>
+
+  <div class="relative">
+    <input type="email" formControlName="email" id="email"
+      class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-heading bg-transparent rounded-base border-1 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      placeholder=" " />
+    <label for="email"
+      class="absolute text-sm text-body duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-neutral-primary px-2 peer-focus:px-2 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+      {{ 'register.email' | translate }}</label>
+    @if(registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
+    <span class="text-xs text-red-500 mt-1 ms-3">
+      @if (registerForm.get('email')?.hasError('required')) {
+      {{ 'register.emailRequired' | translate }}
+      }
+      @else if (registerForm.get('email')?.hasError('email')) {
+      {{ 'register.emailInvalid' | translate }}
+      }
+    </span>
+    }
+  </div>
+
+  <div class="relative">
+    <select id="gender" formControlName="gender"
+      class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-heading bg-transparent rounded-base border-1 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      placeholder=" ">
+      <option value="" disabled selected hidden>{{ 'register.gender' | translate }}</option>
+      <option value="male">{{ 'register.genderMale' | translate }}</option>
+      <option value="female">{{ 'register.genderFemale' | translate }}</option>
+    </select>
+    <label for="gender"
+      class="absolute text-sm text-body duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-neutral-primary px-2 peer-focus:px-2 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+      {{ 'register.gender' | translate }}</label>
+    @if(registerForm.get('gender')?.invalid && registerForm.get('gender')?.touched) {
+    <span class="text-xs text-red-500 mt-1 ms-3">
+      {{ 'register.genderRequired' | translate }}
+    </span>
+    }
+  </div>
+
+  <div class="relative">
+    <input type="date" formControlName="dateOfBirth" id="dateOfBirth"
+      class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-heading bg-transparent rounded-base border-1 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      placeholder=" " />
+    <label for="dateOfBirth"
+      class="absolute text-sm text-body duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-neutral-primary px-2 peer-focus:px-2 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+      {{ 'register.dateOfBirth' | translate }}</label>
+    @if(registerForm.get('dateOfBirth')?.invalid && registerForm.get('dateOfBirth')?.touched) {
+    <span class="text-xs text-red-500 mt-1 ms-3">
+      {{ 'register.dateOfBirthRequired' | translate }}
+    </span>
+    }
+  </div>
+
+  <div class="relative">
+    <input type="password" #pass formControlName="password" id="password"
+      class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-heading bg-transparent rounded-base border-1 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      placeholder=" " />
+
+    <label for="password" class="absolute text-sm text-body duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-neutral-primary px-2 peer-focus:text-fg-brand
+    peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2
+    peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
+      {{ 'register.password' | translate }}
+    </label>
+
+    <span (click)="showPassword(pass)" class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500">
+      <i class="fas fa-eye-slash"></i>
+    </span>
+  </div>
+  @if(registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
+  <span class="text-xs text-red-500  ms-3 block">
+    @if (registerForm.get('password')?.hasError('required')) {
+    {{ 'register.passwordRequired' | translate }}
+    }
+    @else if (registerForm.get('password')?.hasError('pattern')) {
+    {{ 'register.passwordPattern' | translate }}
+    }
+  </span>
+  }
+
+  <div class="relative">
+    <input type="password" formControlName="rePassword" id="repassword"
+      class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-heading bg-transparent rounded-base border-1 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      placeholder=" " />
+    <label for="repassword"
+      class="absolute text-sm text-body duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-neutral-primary px-2 peer-focus:px-2 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+      {{ 'register.rePassword' | translate }}</label>
+    @if(registerForm.get('rePassword')?.invalid && registerForm.get('rePassword')?.touched) {
+    <span class="text-xs text-red-500 mt-1 ms-3">
+      @if (registerForm.get('rePassword')?.hasError('required')) {
+      {{ 'register.rePasswordRequired' | translate }}
+      }
+      @else if (registerForm.get('rePassword')?.hasError('mismatch')) {
+      {{ 'register.rePasswordMismatch' | translate }}
+      }
+    </span>
+    }
+  </div>
+
+  <button type="submit" [disabled]="loading"
+    class="bg-mainColor cursor-pointer text-white py-3 px-4 rounded-base hover:bg-brand-dark disabled:bg-gray-500 disabled:cursor-not-allowed">
+
+    {{ 'register.createAccountButton' | translate }}
+    @if(loading) {
+    <i class="fas fa-spinner fa-spin"></i>
+    }
+  </button>
+  <p class="text-red-500 text-lg text-center ">{{ msgError }}</p>
+</form>

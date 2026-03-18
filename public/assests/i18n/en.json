@@ -1,0 +1,64 @@
+{
+  "login": {
+    "title": "Log in to Route Posts",
+    "subtitle": "Log in and continue your social journey.",
+    "emailOrUsername": "Email or Username",
+    "emailRequired": "Email or Username is required",
+    "emailMinLength": "Email or Username must be at least 3 characters",
+    "password": "Password",
+    "passwordRequired": "Password is required",
+    "passwordPattern": "Password must include uppercase, lowercase, number, and special character",
+    "loginButton": "Login"
+  },
+    "homepage": {
+    "title": "Route posts",
+    "subtitle": "Connect with friends and the world around you on Route Posts.",
+    "aboutTitle": "About Route Academy",
+    "aboutSubtitle": "Egypt's Leading IT Training Center Since 2012",
+    "aboutText": "Route Academy is the premier IT training center in Egypt, established in 2012. We specialize in delivering high-quality training courses in programming, web development, and application development.",
+    "stats": {
+      "founded": "Founded",
+      "graduates": "Graduates",
+      "partners": "Partner Companies",
+      "branches": "Branches",
+      "diplomas": "Diplomas Available"
+    },
+    "statsValues": {
+      "founded": "2012",
+      "graduates": "40+",
+      "partners": "50+",
+      "branches": "5",
+      "diplomas": "20"
+    },
+    "authTabs": {
+      "register": "Register",
+      "login": "Login"
+    }
+  },
+  
+  "register": {
+    "title": "Create a new account",
+    "subtitle": "It is quick and easy.",
+    "name": "Full name",
+    "nameRequired": "Full name is required",
+    "nameMinLength": "Name must be at least 3 characters",
+    "username": "Username",
+    "usernameRequired": "Username is required",
+    "usernameMinLength": "Username must be at least 3 characters",
+    "email": "Email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "gender": "Select Gender",
+    "genderRequired": "Gender is required",
+    "dateOfBirth": "Date of Birth",
+    "dateOfBirthRequired": "Date of Birth is required",
+    "password": "Password",
+    "passwordRequired": "Password is required",
+    "passwordPattern": "Password must include uppercase, lowercase, number, and special character",
+    "rePassword": "Confirm Password",
+    "rePasswordRequired": "Confirm Password is required",
+    "rePasswordMismatch": "Passwords do not match",
+    "createAccountButton": "Create new account"
+  }
+
+}

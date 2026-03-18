@@ -1,0 +1,18 @@
+<app-create-post (postCreated)="getMyPosts()"></app-create-post>
+
+@if (postList.length === 0) {
+  <div class="text-center py-10 text-slate-400">
+    <i class="fa-regular fa-newspaper text-4xl mb-3 block"></i>
+    <p class="font-semibold">No posts yet</p>
+  </div>
+}
+
+@for (post of postList; track $index) {
+  <app-post-card
+    [post]="post"
+    [userId]="userId"
+    (postDeleted)="onPostDeleted($event)"
+      (postShared)="onPostShared($event)"
+>
+  </app-post-card>
+}

@@ -1,0 +1,65 @@
+{
+  "login": {
+    "title": "تسجيل الدخول إلى Route Posts",
+    "subtitle": "سجّل الدخول واستكمل رحلتك الاجتماعية.",
+    "emailOrUsername": "البريد الإلكتروني أو اسم المستخدم",
+    "emailRequired": "البريد الإلكتروني أو اسم المستخدم مطلوب",
+    "emailMinLength": "يجب أن يكون البريد الإلكتروني أو اسم المستخدم 3 أحرف على الأقل",
+    "password": "كلمة المرور",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordPattern": "يجب أن تحتوي كلمة المرور على حرف كبير وصغير ورقم ورمز خاص",
+    "loginButton": "تسجيل الدخول"
+  },
+  "homepage": {
+    "title": "Route posts",
+    "subtitle": "تواصل مع أصدقائك والعالم من حولك على Route posts.",
+    "aboutTitle": "عن Route Academy",
+    "aboutSubtitle": "المركز الرائد لتدريب تكنولوجيا المعلومات في مصر منذ 2012",
+    "aboutText": "روت أكاديمي هو المركز الرائد لتدريب تكنولوجيا المعلومات في مصر، تأسس في 2012. نحن متخصصون في تقديم دورات تدريبية عالية الجودة في البرمجة، تطوير الويب، وتطوير التطبيقات.",
+    "stats": {
+      "founded": "تأسس",
+      "graduates": "الخريجون",
+      "partners": "الشركات الشريكة",
+      "branches": "الفروع",
+      "diplomas": "الشهادات المتاحة"
+    },
+    "statsValues": {
+      "founded": "2012",
+      "graduates": "40+",
+      "partners": "50+",
+      "branches": "5",
+      "diplomas": "20"
+    },
+    "authTabs": {
+      "register": "تسجيل",
+      "login": "تسجيل الدخول"
+    }
+  },
+  
+  "register": {
+    "title": "إنشاء حساب جديد",
+    "subtitle": "سريع وسهل.",
+    "name": "الاسم الكامل",
+    "nameRequired": "الاسم الكامل مطلوب",
+    "nameMinLength": "يجب أن يكون الاسم 3 أحرف على الأقل",
+    "username": "اسم المستخدم",
+    "usernameRequired": "اسم المستخدم مطلوب",
+    "usernameMinLength": "يجب أن يكون اسم المستخدم 3 أحرف على الأقل",
+    "email": "البريد الإلكتروني",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailInvalid": "صيغة البريد الإلكتروني غير صحيحة",
+    "gender": "اختر الجنس",
+    "genderRequired": "الجنس مطلوب",
+    "dateOfBirth": "تاريخ الميلاد",
+    "dateOfBirthRequired": "تاريخ الميلاد مطلوب",
+    "password": "كلمة المرور",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordPattern": "يجب أن تحتوي كلمة المرور على حرف كبير وصغير ورقم ورمز خاص",
+    "rePassword": "تأكيد كلمة المرور",
+    "rePasswordRequired": "تأكيد كلمة المرور مطلوب",
+    "rePasswordMismatch": "كلمات المرور غير متطابقة",
+    "createAccountButton": "إنشاء حساب جديد"
+  }
+
+
+}

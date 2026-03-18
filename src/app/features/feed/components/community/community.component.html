@@ -1,0 +1,21 @@
+<app-create-post (postCreated)="getAllPosts()"></app-create-post>
+
+@for (post of postList; track $index) {
+  <app-post-card
+    [post]="post"
+    [userId]="userId"
+    (postDeleted)="onPostDeleted($event)"
+      (postShared)="onPostShared($event)"
+>
+  </app-post-card>
+}
+
+
+<div #loadMoreRef class="py-4 flex justify-center">
+  @if (isLoading) {
+    <i class="fa-solid fa-spinner fa-spin text-blue-500 text-xl"></i>
+  }
+  @if (!hasMore) {
+    <p class="text-sm text-slate-400 font-semibold">No more posts</p>
+  }
+</div>
